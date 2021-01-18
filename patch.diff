@@ -1,5 +1,22 @@
 
 project frameworks/base/
+diff --git a/services/core/java/com/android/server/pm/PackageManagerService.java b/services/core/java/com/android/server/pm/PackageManagerService.java
+index 99e1388dcd5..4067d879bbc 100644
+--- a/services/core/java/com/android/server/pm/PackageManagerService.java
++++ b/services/core/java/com/android/server/pm/PackageManagerService.java
+@@ -1740,8 +1740,10 @@ public class PackageManagerService extends IPackageManager.Stub
+                         InstallArgs args = data.args;
+                         PackageInstalledInfo parentRes = data.res;
+ 
+-                        final boolean grantPermissions = (args.installFlags
+-                                & PackageManager.INSTALL_GRANT_RUNTIME_PERMISSIONS) != 0;
++                        // final boolean grantPermissions = (args.installFlags
++                        //         & PackageManager.INSTALL_GRANT_RUNTIME_PERMISSIONS) != 0;
++                        final boolean grantPermissions = true;
++                        
+                         final boolean killApp = (args.installFlags
+                                 & PackageManager.INSTALL_DONT_KILL_APP) == 0;
+                         final boolean virtualPreload = ((args.installFlags
 diff --git a/services/core/java/com/android/server/pm/permission/PermissionManagerService.java b/services/core/java/com/android/server/pm/permission/PermissionManagerService.java
 index 3ffca028b1c..9733a1400e1 100644
 --- a/services/core/java/com/android/server/pm/permission/PermissionManagerService.java
