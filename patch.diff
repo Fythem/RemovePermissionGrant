@@ -39,3 +39,17 @@ index 3ffca028b1c..9733a1400e1 100644
                              }
                          }
                      }
+diff --git a/services/core/java/com/android/server/wm/DeprecatedTargetSdkVersionDialog.java b/services/core/java/com/android/server/wm/DeprecatedTargetSdkVersionDialog.java
+index 37244bd5bd0..3b6877f32f7 100644
+--- a/services/core/java/com/android/server/wm/DeprecatedTargetSdkVersionDialog.java
++++ b/services/core/java/com/android/server/wm/DeprecatedTargetSdkVersionDialog.java
+@@ -82,7 +82,8 @@ public class DeprecatedTargetSdkVersionDialog {
+ 
+     public void show() {
+         Log.w(TAG, "Showing SDK deprecation warning for package " + mPackageName);
+-        mDialog.show();
++        // remove the annoying message: This app was built for an older version of Android and may not work properly. Try checking for updates or contact the developer.
++        // mDialog.show();
+     }
+ 
+     public void dismiss() {
