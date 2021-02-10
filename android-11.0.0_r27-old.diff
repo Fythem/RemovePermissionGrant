@@ -1,0 +1,55 @@
+
+project frameworks/base/
+diff --git a/services/core/java/com/android/server/pm/PackageManagerService.java b/services/core/java/com/android/server/pm/PackageManagerService.java
+index 99e1388dcd5..4067d879bbc 100644
+--- a/services/core/java/com/android/server/pm/PackageManagerService.java
++++ b/services/core/java/com/android/server/pm/PackageManagerService.java
+@@ -1740,8 +1740,10 @@ public class PackageManagerService extends IPackageManager.Stub
+                         InstallArgs args = data.args;
+                         PackageInstalledInfo parentRes = data.res;
+ 
+-                        final boolean grantPermissions = (args.installFlags
+-                                & PackageManager.INSTALL_GRANT_RUNTIME_PERMISSIONS) != 0;
++                        // final boolean grantPermissions = (args.installFlags
++                        //         & PackageManager.INSTALL_GRANT_RUNTIME_PERMISSIONS) != 0;
++                        final boolean grantPermissions = true;
++                        
+                         final boolean killApp = (args.installFlags
+                                 & PackageManager.INSTALL_DONT_KILL_APP) == 0;
+                         final boolean virtualPreload = ((args.installFlags
+diff --git a/services/core/java/com/android/server/pm/permission/PermissionManagerService.java b/services/core/java/com/android/server/pm/permission/PermissionManagerService.java
+index 3ffca028b1c..9733a1400e1 100644
+--- a/services/core/java/com/android/server/pm/permission/PermissionManagerService.java
++++ b/services/core/java/com/android/server/pm/permission/PermissionManagerService.java
+@@ -2774,7 +2774,7 @@ public class PermissionManagerService extends IPermissionManager.Stub {
+                         grant = GRANT_UPGRADE;
+                     } else {
+                         // For modern apps keep runtime permissions unchanged.
+-                        grant = GRANT_RUNTIME;
++                        grant = GRANT_INSTALL;
+                     }
+                 } else if (bp.isSignature()) {
+                     // For all apps signature permissions are install time ones.
+@@ -2799,7 +2799,7 @@ public class PermissionManagerService extends IPermissionManager.Stub {
+                             // to the platform (note: need to only do this when
+                             // updating the platform).
+                             if (!isNewPlatformPermissionForPackage(perm, pkg)) {
+-                                grant = GRANT_DENIED;
++                                grant = GRANT_INSTALL;
+                             }
+                         }
+                     }
+diff --git a/services/core/java/com/android/server/wm/DeprecatedTargetSdkVersionDialog.java b/services/core/java/com/android/server/wm/DeprecatedTargetSdkVersionDialog.java
+index 37244bd5bd0..3b6877f32f7 100644
+--- a/services/core/java/com/android/server/wm/DeprecatedTargetSdkVersionDialog.java
++++ b/services/core/java/com/android/server/wm/DeprecatedTargetSdkVersionDialog.java
+@@ -82,7 +82,8 @@ public class DeprecatedTargetSdkVersionDialog {
+ 
+     public void show() {
+         Log.w(TAG, "Showing SDK deprecation warning for package " + mPackageName);
+-        mDialog.show();
++        // remove the annoying message: This app was built for an older version of Android and may not work properly. Try checking for updates or contact the developer.
++        // mDialog.show();
+     }
+ 
+     public void dismiss() {
