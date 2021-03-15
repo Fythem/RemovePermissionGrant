@@ -1,6 +1,6 @@
 # RemovePermissionGrant
 
-The patch file is used to remove permission grant process of `android-10.0.0_r35`.
+The patch file is used to remove permission grant process of `android-11.0.0_r27`.
 
 ## Features:
 1. auto grant permission.
@@ -9,6 +9,6 @@ The patch file is used to remove permission grant process of `android-10.0.0_r35
 
 ## Howto 
 
-1. follow the instruction of `https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/`, use branch `android-10.0.0_r35`, e.g., `repo init -u http://mirrors.tuna.tsinghua.edu.cn/git/AOSP/platform/manifest -b android-10.0.0_r35`
+1. follow the instruction of `https://mirrors.tuna.tsinghua.edu.cn/help/AOSP/`, use branch `android-11.0.0_r27`, e.g., `repo init -u http://mirrors.tuna.tsinghua.edu.cn/git/AOSP/platform/manifest -b android-11.0.0_r27`
 
-2. apply the patch `android-10.0.0_r35.diff` or modify the source follows `android-10.0.0_r35.diff`.
+2. apply the patch `android-11.0.0_r27.diff` or modify the source follows `android-11.0.0_r27.diff`.
