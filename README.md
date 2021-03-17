@@ -12,6 +12,9 @@ The patch file is used to remove permission grant process of `android-11.0.0_r27
 | # |  Folder   | Status |
 | ---- |  :----:  | :----: |
 |1| 1 | - |
+|2| 2 | - |
+|3| remove footer and header | - |
+|4| turn off screen saving | - |
 
 ## Howto: 
 
