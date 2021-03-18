@@ -3,18 +3,16 @@
 The patch file is used to remove permission grant process of `android-11.0.0_r27`.
 
 ## Features:
-1. auto grant permission.
-2. remove the annoying message: This app was built for an older version of Android and may not work properly. Try checking for updates or contact the developer.
-3. bypass these use WindowManager.LayoutParams.FLAG_SECURE to prevent taking snapshot.
 
-## TODO:
-
-| # |  Folder   | Status |
-| ---- |  :----:  | :----: |
-|1| 1 | - |
-|2| 2 | - |
-|3| remove footer and header | - |
-|4| turn off screen saving | - |
+| # | Description |  test case   | Status |
+| :----: |  :----  |  :----:  | :----: |
+|1| auto grant permission | - | DONE |
+|2| remove the annoying message: This app was built for an older version of Android and may not work properly. Try checking for updates or contact the developer. | - | DONE |
+|3| bypass these use WindowManager.LayoutParams.FLAG_SECURE to prevent taking snapshot. | - | DONE |
+|4| root detector | 1 | |
+|5| system prompt | 2 | |
+|6| remove footer and header | - | |
+|7| turn off screen saver | - | |
 
 ## Howto: 
 
