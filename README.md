@@ -13,6 +13,7 @@ The patch file is mainly used to remove permission grant process of `android-11.
 |5| remove system prompt | 2 | |
 |6| remove footer and header | - | |
 |7| turn off screen saver | - | |
+|8| INSTALL_FAILED_NO_MATCHING_ABIS: Failed to extract native libraries, res=-113 | 3 | |
 
 ## Howto: 
 
